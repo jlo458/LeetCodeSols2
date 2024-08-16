@@ -1,1 +1,3 @@
-# LeetCodeSols2
+### LeetCodeSols2
+
+#### This is my second repo full of leetcode solutions
