@@ -37,3 +37,61 @@ def traverse(node, nodes):
 
 nodes = []
 print(traverse(theRoot, nodes))
+
+''' 
+
+class Node:
+  def __init__(self, val=None, children=None):
+      self.val = val
+      self.children = children 
+
+def makeTree(order):
+  if not order:
+      return None
+
+  root = Node(val=order[0])
+  queue = [root]
+
+  i = 2
+  while i < len(order):
+      currentNode = queue.pop(0)
+      children = []
+
+      while i < len(order) and order[i] is not None:
+          childNode = Node(val=order[i])
+          children.append(childNode)
+          queue.append(childNode)
+          i += 1
+
+      currentNode.children = children
+
+      i += 1
+
+  return root
+
+theRoot = makeTree(root)
+
+
+  
+
+def traverse(node, nodes): 
+  if node is None:
+    return 
+
+  #print(node.val)
+
+  if node.children: 
+    for child in node.children: 
+      traverse(child, nodes)
+
+    #print(node.val)
+    nodes.append(node.val)
+
+  else: 
+    nodes.append(node.val)
+    
+  return nodes
+
+nodes = []
+return traverse(theRoot, nodes)
+'''
